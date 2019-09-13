@@ -58,10 +58,8 @@ function loadWholePage(path, gallery)
 	loadHTML(path, processHTML, x, y, gallery);
 }
 
-window.onload = function() {
 	loadImageGallery();
 	console.log("AAAAAAAAAA");
-};
 
 function loadImageGallery() {
 	loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/");
