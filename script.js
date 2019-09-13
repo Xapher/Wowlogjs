@@ -61,7 +61,7 @@ loadImageGallery();
 var report;
 function loadImageGallery() {
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
-	report = window.location.href.split("/")[3];
+	report = window.location.href.split("/")[4];
 	console.log(report);
 	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/" + report + "/\">";
 	var select = "<select id=\"abilityChange\"><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
