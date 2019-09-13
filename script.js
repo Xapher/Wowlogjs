@@ -58,11 +58,12 @@ function loadWholePage(path)
 }
 
 loadImageGallery();
-
+var report;
 function loadImageGallery() {
-	loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/");
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
-	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/\">";
+	report = window.location.href.split("/")[3];
+	console.log(report);
+	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/" + report + "/\">";
 	var select = "<select id=\"abilityChange\"><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
 	dropdowns.innerHTML = dropdowns.innerHTML + "<p>Compare with:</p> <button onclick=updateComparison()>Compare</button>" + select + iframe;
 	document.getElementById("frame").style.display = "none";
@@ -72,18 +73,20 @@ var namesA;
 var namesB
 //hidden iframe, use that to get names
 function updateComparison() {
+	namesA = "";
+	namesB = "";
 	//var debuffA = GetURLParameter('ability');
 	var debuffB = document.getElementById("abilityChange").value;
 	namesA = document.getElementsByClassName("main-table-name"); //.innerText
 	var frame = document.getElementById("frame");
-	frame.src = ("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
+	frame.src = ("https://www.warcraftlogs.com/reports/" + report + "/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
 	namesB = frame.contentWindow.document.getElementsByClassName("main-table-name");
 	console.log(namesB);
 	console.log(namesA);
-	for (var i = namesA.length - 1; i >= 0; i--) {
+	for (var i = 0; i < namesA.length; i++) {
 		document.getElementsByClassName("main-table-name")[i].childNodes[3].className = "";
 		document.getElementsByClassName("main-table-name")[i].childNodes[3].style.color = "red";
-		for (var x = namesB.length - 1; x >= 0; x--) {
+		for (var x = 0; x < namesB.length; x++) {
 			if(namesA[i].innerText.trim() === namesB[x].innerText.trim()) {
 				console.log("Equal" + namesA[i].innerText.trim());
 				document.getElementsByClassName("main-table-name")[i].childNodes[3].className = "";
