@@ -60,6 +60,7 @@ function loadWholePage(path, gallery)
 
 window.onload = function() {
 	loadImageGallery();
+	console.log("AAAAAAAAAA");
 };
 
 function loadImageGallery() {
