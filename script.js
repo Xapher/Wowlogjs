@@ -77,7 +77,7 @@ function updateComparison() {
 	frame.src = ("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
 	console.log(frame.contentWindow.document.getElementsByClassName("main-table-name"));
 	console.log(names);
-	if(names[0].innerText == frame.contentWindow.document.getElementsByClassName("main-table-name")[0].innerText) {
+	if(names[0].innerText.trim() == frame.contentWindow.document.getElementsByClassName("main-table-name")[0].innerText.trim()) {
 		console.log("E");
 	}
 } 
