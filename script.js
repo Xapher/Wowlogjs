@@ -80,7 +80,12 @@ function updateComparison() {
 	namesB = frame.contentWindow.document.getElementsByClassName("main-table-name");
 	console.log(namesB);
 	console.log(namesA);
-	if(namesA[0].innerText.trim() == namesB[0].innerText.trim()) {
-		console.log("E");
+	for (var i = namesA.length - 1; i >= 0; i--) {
+		for (var x = namesB.length - 1; x >= 0; x--) {
+			if(namesA[i].innerText.trim() === namesB[x].innerText.trim()) {
+				console.log("Equal" + namesA[i].innerText.trim());
+			}
+		}
 	}
+	
 } 
