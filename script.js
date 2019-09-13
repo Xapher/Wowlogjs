@@ -64,7 +64,7 @@ function loadImageGallery() {
 	url = window.location.pathname.split("/");
 	report = url[2];
 	console.log(window.location.href);
-	fight = window.location.href.substring(window.location.href.indexOf("fight="),window.location.href.indexOf("fight=") + 1);
+	fight = window.location.href.substring(window.location.href.indexOf("fight="),window.location.href.indexOf("fight=") + 7);
 	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/" + report + "/\">";
 	var select = "<select id=\"abilityChange\"><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
 	dropdowns.innerHTML = dropdowns.innerHTML + "<p>Compare with:</p> <button onclick=updateComparison()>Compare</button>" + select + iframe;
