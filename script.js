@@ -63,6 +63,10 @@ loadImageGallery();
 
 
 function loadImageGallery() {
+	var sPageURL = window.location.search.substring(1);
+	if(sPageURL.includes("&ability")) {
+
+	}
 	loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/");
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
 	var select = "<select><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
