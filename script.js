@@ -60,10 +60,12 @@ function loadWholePage(path)
 loadImageGallery();
 var report;
 var fight;
+var url;
+var temp;
 function loadImageGallery() {
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
-	var url = "" + window.location.href.split("/");
-	var temp = url[4].split("#");
+	url = "" + window.location.href.split("/");
+	temp = url[4].split("#");
 	report = temp[0];
 	fight = temp[1];
 	fight = fight.split("&");
