@@ -74,17 +74,3 @@ function updateComparison() {
 	var requestedNames = loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
 	console.log(names);
 }
-
-function GetURLParameter(sParam)
-{
-    var sPageURL = window.location.href;
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            return sParameterName[1];
-        }
-    }
-}​
