@@ -59,7 +59,7 @@ function loadWholePage(path)
 }
 
 loadImageGallery();
-var select = "<select><option value="299255">Stand Alone</option><option value="299254">Stand Together</option><option value="299249">Soak Orb</option><option value="298781">Don't soak</option></select>";
+var select = "<select><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
 
 
 function loadImageGallery() {
