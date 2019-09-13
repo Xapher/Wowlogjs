@@ -62,7 +62,7 @@ var report;
 var fight;
 function loadImageGallery() {
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
-	var url = windowl.location.href;
+	var url = window.location.href;
 	report = url.split("/")[4].split("#")[0];
 	fight = url.split("/")[4].split("#")[1];
 	fight = fight.split("&");
