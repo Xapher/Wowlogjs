@@ -82,12 +82,12 @@ function updateComparison() {
 	console.log(namesA);
 	for (var i = namesA.length - 1; i >= 0; i--) {
 		namesA[i].className = "";
-		namesA[i].style.color = "red";
+		namesA[i].childNodes[3].style.color = "red";
 		for (var x = namesB.length - 1; x >= 0; x--) {
 			if(namesA[i].innerText.trim() === namesB[x].innerText.trim()) {
 				console.log("Equal" + namesA[i].innerText.trim());
 				namesA[i].className = "";
-				namesA[i].style.color = "green";
+				namesA[i].childNodes[3].style.color = "green";
 			}
 		}
 	}
