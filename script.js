@@ -62,10 +62,11 @@ loadImageGallery();
 function loadImageGallery() {
 	loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/");
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
+	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/\">";
 	var select = "<select id=\"abilityChange\" onchange=\"updateComparison()\"><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
 	dropdowns.innerHTML = dropdowns.innerHTML + "<p>Compare with:</p>" + select + iframe;
 }
-var iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/\">";
+var iframe;
 //hidden iframe, use that to get names
 function updateComparison() {
 	//var debuffA = GetURLParameter('ability');
