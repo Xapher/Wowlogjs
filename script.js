@@ -60,24 +60,31 @@ function loadWholePage(path)
 
 loadImageGallery();
 
-function setAbilityFilter(abilityID, actorID, optionalLink, nameToCache) {
-    if (filterAbility == abilityID)
-        return !1
-    var params = $.deparam.fragment()
-    updateFilterAbilityParams(params, abilityID, actorID)
-    if (optionalLink) {
-        abilityNameCache[abilityID] = nameToCache ? nameToCache : optionalLink.innerHTML
-        return changeLink(optionalLink, params)
-    }
-    console.log("test");
-    return changeView(params)
-}
-
 function loadImageGallery() {
-
 	loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/");
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
-	var select = "<select><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
+	var select = "<select id=\"abilityChange\" onchange=\"updateComparison()\"><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
 	dropdowns.innerHTML = dropdowns.innerHTML + "<p>Compare with:</p>" + select;
 }
 
+function updateComparison() {
+	var debuffA = GetURLParameter('ability');
+	var debuffB = document.getElementById("abilityChange").value;
+	var names = document.getElementsByClassName("main-table-name");
+	var requestedNames = loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
+	console.log(names);
+}
+
+function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}​
