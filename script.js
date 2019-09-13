@@ -81,13 +81,13 @@ function updateComparison() {
 	console.log(namesB);
 	console.log(namesA);
 	for (var i = namesA.length - 1; i >= 0; i--) {
-		namesA[i].className = "";
-		namesA[i].childNodes[3].style.color = "red";
+		document.getElementsByClassName("main-table-name")[i].childNodes[3].className = "";
+		document.getElementsByClassName("main-table-name")[i].childNodes[3].style.color = "red";
 		for (var x = namesB.length - 1; x >= 0; x--) {
 			if(namesA[i].innerText.trim() === namesB[x].innerText.trim()) {
 				console.log("Equal" + namesA[i].innerText.trim());
-				namesA[i].className = "";
-				namesA[i].childNodes[3].style.color = "green";
+				document.getElementsByClassName("main-table-name")[i].childNodes[3].className = "";
+				document.getElementsByClassName("main-table-name")[i].childNodes[3].style.color = "green";
 			}
 		}
 	}
