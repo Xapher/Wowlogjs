@@ -77,7 +77,7 @@ function updateComparison() {
 
 function GetURLParameter(sParam)
 {
-    var sPageURL = window.location;
+    var sPageURL = window.location.href;
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++) 
     {
