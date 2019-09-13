@@ -68,9 +68,10 @@ function loadImageGallery() {
 }
 
 function updateComparison() {
-	var debuffA = GetURLParameter('ability');
+	console.log(window.location.href);
+	//var debuffA = GetURLParameter('ability');
 	var debuffB = document.getElementById("abilityChange").value;
 	var names = document.getElementsByClassName("main-table-name");
 	var requestedNames = loadWholePage("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
 	console.log(names);
-}
+} 
