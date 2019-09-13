@@ -66,8 +66,8 @@ function loadImageGallery() {
 	var dropdowns = document.getElementById("filter-target-and-ability-selection");
 	url = window.location.pathname.split("/");
 	temp = url[3].split("#");
-	report = temp[0];
-	fight = temp[1];
+	report = url[3];
+	fight = window.location.href.split("/")[4].split("#")[1].split("&")[0];
 	fight = fight.split("&");
 	console.log(report);
 	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/" + report + "/\">";
