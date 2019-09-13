@@ -65,7 +65,7 @@ function loadImageGallery() {
 	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/\">";
 	var select = "<select id=\"abilityChange\" onchange=\"updateComparison()\"><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
 	dropdowns.innerHTML = dropdowns.innerHTML + "<p>Compare with:</p>" + select + iframe;
-	document.getElementById("frame").style.display = "none";
+	
 }
 var iframe;
 var namesA;
