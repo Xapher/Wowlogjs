@@ -68,17 +68,19 @@ function loadImageGallery() {
 	document.getElementById("frame").style.display = "none";
 }
 var iframe;
-var names;
+var namesA;
+var namesB
 //hidden iframe, use that to get names
 function updateComparison() {
 	//var debuffA = GetURLParameter('ability');
 	var debuffB = document.getElementById("abilityChange").value;
-	names = document.getElementsByClassName("main-table-name"); //.innerText
+	namesA = document.getElementsByClassName("main-table-name"); //.innerText
 	var frame = document.getElementById("frame");
 	frame.src = ("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
-	console.log(frame.contentWindow.document.getElementsByClassName("main-table-name"));
-	console.log(names);
-	if(names[0].innerText.trim() == frame.contentWindow.document.getElementsByClassName("main-table-name")[0].innerText.trim()) {
+	namesB = frame.contentWindow.document.getElementsByClassName("main-table-name");
+	console.log(namesB);
+	console.log(namesA);
+	if(namesA[0].innerText.trim() == namesB[0].innerText.trim()) {
 		console.log("E");
 	}
 } 
