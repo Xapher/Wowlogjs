@@ -88,7 +88,6 @@ function updateComparison() {
 				console.log("Equal" + namesA[i].innerText.trim());
 				namesA[i].className = "";
 				namesA[i].style.color = "green";
-				break;
 			}
 		}
 	}
