@@ -65,6 +65,7 @@ function loadImageGallery() {
 	iframe = "<iframe id=\"frame\" src=\"https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/\">";
 	var select = "<select id=\"abilityChange\" onchange=\"updateComparison()\"><option value=\"299255\">Stand Alone</option><option value=\"299254\">Stand Together</option><option value=\"299249\">Soak Orb</option><option value=\"298781\">Don't soak</option></select>";
 	dropdowns.innerHTML = dropdowns.innerHTML + "<p>Compare with:</p>" + select + iframe;
+	document.getElementById("frame").style.display = "none";
 }
 var iframe;
 //hidden iframe, use that to get names
@@ -73,7 +74,6 @@ function updateComparison() {
 	var debuffB = document.getElementById("abilityChange").value;
 	var names = document.getElementsByClassName("main-table-name"); //.innerText
 	var frame = document.getElementById("frame");
-	frame.style.visibility = "hidden";
 	frame.src = ("https://www.warcraftlogs.com/reports/1D6QGwCBg7RPh3TH/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
 	console.log(frame.contentWindow.document.getElementsByClassName("main-table-name"));
 	console.log("This page names = " + names);
