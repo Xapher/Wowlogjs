@@ -84,7 +84,7 @@ function updateComparison() {
 	var debuffB = document.getElementById("abilityChange").value;
 	namesA = document.getElementsByClassName("main-table-name"); //.innerText
 	var frame = document.getElementById("frame");
-	frame.src = ("https://www.warcraftlogs.com/reports/" + report + "/#fight=8&type=auras&spells=debuffs&ability=" + debuffB);
+	frame.src = ("https://www.warcraftlogs.com/reports/" + report + "/#" + fight[0] + "&type=auras&spells=debuffs&ability=" + debuffB);
 	namesB = frame.contentWindow.document.getElementsByClassName("main-table-name");
 	console.log(namesB);
 	console.log(namesA);
